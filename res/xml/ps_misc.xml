@@ -30,4 +30,17 @@
                 android:entryValues="@array/navbar_layout_values"
                 android:defaultValue="default" />
 
+
+    <PreferenceCategory
+        android:key="misc_notification"
+        android:title="@string/misc_notification">
+
+        <!-- Heads up -->
+        <Preference
+                android:key="heads_up_notifications"
+                android:title="@string/heads_up_notifications"
+                android:fragment="com.palladium.atomichub.fragments.HeadsUpSettings" />
+                
+    </PreferenceCategory>
+
 </PreferenceScreen>
