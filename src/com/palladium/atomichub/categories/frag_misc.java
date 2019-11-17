@@ -17,6 +17,7 @@ import android.os.ServiceManager;
 import com.palladium.atomichub.*;
 import android.app.ActionBar;
 import com.android.internal.util.custom.FodUtils;
+import com.palladium.atomichub.preference.SystemSettingMasterSwitchPreference;
 
 public class frag_misc extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
@@ -25,6 +26,9 @@ public class frag_misc extends SettingsPreferenceFragment implements OnPreferenc
     private Context mContext;
 
     private static final String KEY_FOD_RECOGNIZING_ANIM = "fod_recognizing_animation";
+    private static final String GAMING_MODE_ENABLED = "gaming_mode_enabled";
+
+    private SystemSettingMasterSwitchPreference mGamingMode;
 
 
     @Override
@@ -42,6 +46,10 @@ public class frag_misc extends SettingsPreferenceFragment implements OnPreferenc
             prefScreen.removePreference(findPreference(KEY_FOD_RECOGNIZING_ANIM));
         }
 
+        mGamingMode = (SystemSettingMasterSwitchPreference) findPreference(GAMING_MODE_ENABLED);
+        mGamingMode.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.GAMING_MODE_ENABLED, 0) == 1));
+        mGamingMode.setOnPreferenceChangeListener(this);
     }
     @Override
     public int getMetricsCategory() {
@@ -62,6 +70,13 @@ public class frag_misc extends SettingsPreferenceFragment implements OnPreferenc
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final String key = preference.getKey();
+
+        if (preference == mGamingMode) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.GAMING_MODE_ENABLED, value ? 1 : 0);
+            return true;
+        }
         return true;
     }
 }

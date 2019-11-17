@@ -47,7 +47,22 @@
                 android:key="heads_up_notifications"
                 android:title="@string/heads_up_notifications"
                 android:fragment="com.palladium.atomichub.fragments.HeadsUpSettings" />
-                
+
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="misc_gamingmode"
+        android:title="@string/misc_gamingmode">
+
+        <!-- Gaming Mode -->
+        <com.palladium.atomichub.preference.SystemSettingMasterSwitchPreference
+                android:key="gaming_mode_enabled"
+                android:fragment="com.palladium.atomichub.fragments.GamingMode"
+                android:title="@string/gaming_mode_title"
+                android:summary="@string/gaming_mode_summary"
+                android:defaultValue="false" />
+
+    </PreferenceCategory>    
+
 
 </PreferenceScreen>
