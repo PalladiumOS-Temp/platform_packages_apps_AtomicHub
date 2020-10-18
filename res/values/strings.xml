@@ -37,4 +37,8 @@
     <string name="Team_summary">Spend time in knowing people behind this project !</string>
     <string name="button">Buttons</string>
     <string name="team">Team</string>
+
+    <!-- Customization Titles -->
+    <string name="volume_rocker_music_controls_title">Playback control</string>
+    <string name="volume_rocker_music_controls_summary">When the screen is off, long-pressing the volume keys will seek music tracks</string>
 </resources>
