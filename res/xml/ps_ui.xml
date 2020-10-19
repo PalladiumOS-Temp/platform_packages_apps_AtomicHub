@@ -8,4 +8,10 @@
             android:key="ui_animation"
             android:layout="@layout/ui_animation" />
 
+    <com.palladium.atomichub.preference.SystemSettingSwitchPreference
+        android:key="lockscreen_battery_info"
+        android:title="@string/lockscreen_battery_info_title"
+        android:summary="@string/lockscreen_battery_info_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>
