@@ -8,4 +8,10 @@
             android:key="statusbar_animation"
             android:layout="@layout/statusbar_animation" />
 
+    <com.palladium.atomichub.preference.SystemSettingSwitchPreference
+        android:key="show_fourg"
+        android:title="@string/show_fourg_title"
+        android:summary="@string/show_fourg_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
