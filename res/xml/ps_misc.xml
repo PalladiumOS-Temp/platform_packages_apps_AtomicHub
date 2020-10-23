@@ -55,8 +55,8 @@
         android:title="@string/misc_gamingmode">
 
         <!-- Gaming Mode -->
-        <com.palladium.atomichub.preference.SystemSettingMasterSwitchPreference
-                android:key="gaming_mode_enabled"
+        <Preference
+                android:key="gaming_mode"
                 android:fragment="com.palladium.atomichub.fragments.GamingMode"
                 android:title="@string/gaming_mode_title"
                 android:summary="@string/gaming_mode_summary"
