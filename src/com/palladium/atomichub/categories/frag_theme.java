@@ -23,6 +23,7 @@ import android.os.ServiceManager;
 import android.app.ActionBar;
 import android.os.SystemProperties;
 import android.os.UserHandle;
+import static android.os.UserHandle.USER_CURRENT;
 import android.provider.Settings;
 import com.palladium.atomichub.*;
 import androidx.preference.*;
@@ -31,22 +32,35 @@ import com.android.settings.display.OverlayCategoryPreferenceController;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 
 public class frag_theme extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String ACCENT_COLOR = "accent_color";
     private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
+    private static final String CUSTOM_CLOCK_FACE = Settings.Secure.LOCK_SCREEN_CUSTOM_CLOCK_FACE;
+    private static final String DEFAULT_CLOCK = "com.android.keyguard.clock.DefaultClockController";
     private IOverlayManager mOverlayService;
     private ColorPickerPreference mThemeColor;
-    
+    private ListPreference mLockClockStyles;
+    private Context mContext;
+        
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.ps_theme);
         mOverlayService = IOverlayManager.Stub
                 .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
+        mContext = getActivity();
         //Feature Additon!
-         setupAccentPref();
+        setupAccentPref();
+        mLockClockStyles = (ListPreference) findPreference(CUSTOM_CLOCK_FACE);
+        String mLockClockStylesValue = getLockScreenCustomClockFace();
+        mLockClockStyles.setValue(mLockClockStylesValue);
+        mLockClockStyles.setSummary(mLockClockStyles.getEntry());
+        mLockClockStyles.setOnPreferenceChangeListener(this);
 
     }
 
@@ -99,8 +113,39 @@ public class frag_theme extends SettingsPreferenceFragment implements OnPreferen
              } catch (RemoteException ignored) {
              }
         }
+        if (preference == mLockClockStyles) {
+            setLockScreenCustomClockFace((String) newValue);
+            int index = mLockClockStyles.findIndexOfValue((String) newValue);
+            mLockClockStyles.setSummary(mLockClockStyles.getEntries()[index]);
+            return true;
+        }
         return true;
     }
+
+    private String getLockScreenCustomClockFace() {
+        String value = Settings.Secure.getStringForUser(mContext.getContentResolver(),
+                CUSTOM_CLOCK_FACE, USER_CURRENT);
+
+        if (value == null || value.isEmpty()) value = DEFAULT_CLOCK;
+
+        try {
+            JSONObject json = new JSONObject(value);
+            return json.getString("clock");
+        } catch (JSONException ex) {
+        }
+        return value;
+    }
+
+    private void setLockScreenCustomClockFace(String value) {
+        try {
+            JSONObject json = new JSONObject();
+            json.put("clock", value);
+            Settings.Secure.putStringForUser(mContext.getContentResolver(), CUSTOM_CLOCK_FACE,
+                    json.toString(), USER_CURRENT);
+        } catch (JSONException ex) {
+        }
+    }
+
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.PALLADIUM;
