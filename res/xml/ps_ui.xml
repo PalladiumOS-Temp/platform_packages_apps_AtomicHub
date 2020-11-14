@@ -26,4 +26,11 @@
         android:summary="@string/lockscreen_battery_info_summary"
         android:defaultValue="true" />
 
+    <Preference
+	    android:key="clock_settings"
+        android:title="@string/clocksettings_title"
+        android:summary="@string/clocksettings_summary"
+        android:fragment="com.palladium.atomichub.fragments.ClockSettings"
+        android:icon="@drawable/ic_settings_clock" />
+
 </PreferenceScreen>
