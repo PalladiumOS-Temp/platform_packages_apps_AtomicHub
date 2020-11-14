@@ -25,4 +25,10 @@
         android:title="@string/use_old_mobiletype_title"
         android:summary="@string/use_old_mobiletype_summary"
         android:defaultValue="true" />
+
+    <com.palladium.atomichub.preference.SecureSettingSwitchPreference
+        android:key="quick_settings_vibrate"
+        android:title="@string/quick_settings_vibrate_title"
+        android:summary="@string/quick_settings_vibrate_summary"
+        android:defaultValue="false"/>
 </PreferenceScreen>
