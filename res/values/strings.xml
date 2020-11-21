@@ -109,5 +109,8 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
     <string name="color_default">Default</string>
+
+    <string name="clock_style_title">Lockscreen lock</string>
+    <string name="clock_style_summary">Customize your lockscreen clock</string>
     
 </resources>
