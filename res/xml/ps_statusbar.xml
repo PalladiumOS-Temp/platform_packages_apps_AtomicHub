@@ -140,11 +140,12 @@
         android:key="theme_customization_category"
         android:title="@string/qstatusbar">
 
-        <com.palladium.atomichub.preference.SystemSettingSwitchPreference
+        <com.palladium.atomichub.preference.SystemSettingListPreference
             android:key="qs_datausage" 
-            android:title="@string/qs_datausage_title" 
-            android:summary="@string/qs_datausage_subtitle" 
-            android:defaultValue="false" />
+            android:title="@string/qs_datausage_title"
+            android:entries="@array/qs_datausage_entries"
+            android:entryValues="@array/qs_datausage_values"
+            android:defaultValue="0" />
 
         <com.palladium.atomichub.preference.SecureSettingSwitchPreference
             android:key="quick_settings_vibrate"
