@@ -5,5 +5,6 @@
     <color name="card_text">#FCFCFC</color>
     <color name="bottom_navigation_ripple">#13FFFFFF</color>
     <color name="teambackground">#6c6c6c</color>
+    <color name="fod_item_background_stroke_color">#555555</color>
 </resources> 
 
