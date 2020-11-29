@@ -1,5 +1,6 @@
 package com.palladium.atomichub.categories;
 
+import android.app.Activity;
 import android.content.ContentResolver;
 import android.os.Bundle;
 import android.content.Context;
@@ -14,6 +15,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import android.os.ServiceManager;
+import android.os.SystemProperties;
 import android.content.res.Resources;
 import android.app.ActionBar;
 import androidx.preference.*;
@@ -33,12 +35,16 @@ public class frag_ui extends SettingsPreferenceFragment implements OnPreferenceC
     private static final String PREF_ROUNDED_CORNER = "rounded_ui";
     private static final String PREF_SB_HEIGHT = "statusbar_height";
     private static final String SWITCH_STYLE = "switch_style";
+    private static final String LOCKSCREEN_FOD_CATEGORY = "lockscreen_fod_category";
     private ListPreference mRoundedUi;
     private ListPreference mSbHeight;
     private IOverlayManager mOverlayService;
     private Preference mPocketJudge;
+    private Preference mLockscreenFod;
     private IOverlayManager mOverlayManager;
     private ListPreference mSwitchStyle;
+    private ContentResolver mResolver;
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +54,16 @@ public class frag_ui extends SettingsPreferenceFragment implements OnPreferenceC
         
         PreferenceScreen prefScreen = getPreferenceScreen();
         //Feature Additon!
-        final Resources res = getResources();
+
+        final Resources res = getResources();       
+        PreferenceCategory overallPreferences = (PreferenceCategory) findPreference("fod_category");
+        mResolver = getActivity().getContentResolver();
+
+        Preference mLockscreenFod = findPreference("lockscreen_fod_category");
+            if (! res.getBoolean(com.android.internal.R.bool.config_needCustomFODView)) {
+                    prefScreen.removePreference(overallPreferences);
+            } 
+
         mPocketJudge = (Preference) prefScreen.findPreference(POCKET_JUDGE);
         boolean mPocketJudgeSupported = res.getBoolean(
                 com.android.internal.R.bool.config_pocketModeSupported);

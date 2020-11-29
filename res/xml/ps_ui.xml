@@ -34,6 +34,18 @@
 
      </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="fod_category"
+        android:title="@string/lockscreen_fod_category">
+        
+        <Preference
+            android:key="lockscreen_fod_category"
+            android:fragment="com.palladium.atomichub.fragments.FodGeneral"
+            android:title="@string/lockscreen_fod_category"
+            android:summary="@string/lockscreen_fod_summary" />  
+
+    </PreferenceCategory>
+
     <ListPreference
         android:key="switch_style"
         android:title="@string/switch_style_title"
