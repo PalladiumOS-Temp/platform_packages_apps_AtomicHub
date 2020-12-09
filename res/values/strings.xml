@@ -216,6 +216,7 @@
     <string name="navbar_layout_compact">Compact</string>
     <string name="navbar_layout_leftleaning">Left-leaning</string>
     <string name="navbar_layout_rightleaning">Right-leaning</string>
+    <string name="navbar_visibility">Enable navigation bar</string>
 
     <!-- Network traffic -->
     <string name="traffic_title">Network traffic</string>
