@@ -32,6 +32,18 @@
      
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="ambient_gestures"
+        android:title="@string/ambient_gestures">
+          
+          <com.palladium.atomichub.preference.SecureSettingSwitchPreference
+               android:key="doze_pulse_on_double_tap"
+               android:title="@string/double_tap_on_doze_to_wake_title"
+               android:summary="@string/double_tap_on_doze_to_wake_summary"
+               android:defaultValue="true" />
+     
+    </PreferenceCategory>
+
  <PreferenceCategory
         android:key="pulse_ambient_light_category"
         android:title="@string/pulse_ambient_light_category" >
