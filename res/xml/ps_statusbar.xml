@@ -15,7 +15,7 @@
         android:defaultValue="false" />
 
     <com.palladium.atomichub.preference.SystemSettingSwitchPreference
-        android:key="show_volte"
+        android:key="show_volte_icon"
         android:title="@string/volte_switch_title"
         android:summary="@string/volte_switch_summary"
         android:defaultValue="true" />
