@@ -6,6 +6,7 @@ import android.content.Context;
 import androidx.fragment.app.Fragment;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.*;
 import android.content.om.IOverlayManager;
 import android.content.om.OverlayInfo;
 import com.android.settings.R;
@@ -15,10 +16,16 @@ import com.android.settings.Utils;
 import android.os.ServiceManager;
 import com.palladium.atomichub.*;
 import android.app.ActionBar;
+import com.android.internal.util.custom.FodUtils;
 
 public class frag_misc extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private IOverlayManager mOverlayService;
+    private boolean mHasFod;
+    private Context mContext;
+
+    private static final String KEY_FOD_RECOGNIZING_ANIM = "fod_recognizing_animation";
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,6 +34,13 @@ public class frag_misc extends SettingsPreferenceFragment implements OnPreferenc
         mOverlayService = IOverlayManager.Stub
                 .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
         //Feature Additon!
+        mContext = getContext();
+        mHasFod = FodUtils.hasFodSupport(mContext);
+        PreferenceScreen prefScreen = getPreferenceScreen();
+
+        if (!mHasFod) {
+            prefScreen.removePreference(findPreference(KEY_FOD_RECOGNIZING_ANIM));
+        }
 
     }
     @Override
