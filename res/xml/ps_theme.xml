@@ -7,6 +7,13 @@
             android:key="theme_animation"
             android:layout="@layout/theme_animation" />
 
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="accent_color"
+        android:title="@string/accent_color"
+        android:summary="@string/accent_summary"
+        android:defaultValue="0xffffff"
+        android:persistent="false" />
+
     <PreferenceCategory
         android:key="theme_customization_category"
         android:title="@string/theme_ui">
@@ -14,11 +21,9 @@
         <ListPreference
             android:key="android.theme.customization.font"
             android:title="@string/theme_customization_font_title"/>
-
         <ListPreference
             android:key="android.theme.customization.adaptive_icon_shape"
             android:title="@string/theme_customization_icon_shape_title"/>
-
     </PreferenceCategory>
 
        <Preference
