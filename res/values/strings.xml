@@ -77,6 +77,8 @@
     <string name="use_old_mobiletype_summary">Use pre-p mobiletype icons for signal (Reboot required)</string>
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
+    <string name="tuner_title">Statusbar Icon Tuner</string>
+    <string name="tuner_summary">Control visibility of status bar icons</string>
     <string name="data_disabled_icon_title">Data disabled icon</string>
     <string name="data_disabled_icon_summary">Display a cross sign next to signal bar when data is disabled</string>
     <string name="roaming_indicator_icon_title">Roaming indicator</string>
