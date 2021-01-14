@@ -1,0 +1,40 @@
+<resources>
+    <string name="title_activity_settings">Settings</string>
+    <string name="app_name">Atomic Hub</string>
+    <string name="themes">Themes</string>
+    <string name="status_bar">Status Bar</string>
+    <string name="ui">UI</string>
+    <string name="keys">Keys</string>
+    <string name="misc">Misc</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+
+    <!-- Card Names -->
+    <string name="UI_Title">User Interface</string>
+    <string name="UI_Summary">Redefine your experience by changing fonts, icons, volume panel</string>
+    <string name="Theme_Title">Theme</string>
+    <string name="Theme_summary">Take your experience to next level by playing with colors !</string>
+    <string name="Status_Title">Status Bar</string>
+    <string name="Status_summary">Improve your interaction by placing essential items at your sight !</string>
+    <string name="Button_Title">Button</string>
+    <string name="Button_Summary">Yes There are lot of buttons ! Isn\'t it ?  check them here  !</string>
+    <string name="Misc_Title">Misc</string>
+    <string name="Misc_Summary">Still can’t find the one your looking for  check here !</string>
+    <string name="Team_Title">Team</string>
+    <string name="Team_summary">Spend time in knowing people behind this project !</string>
+    <string name="button">Buttons</string>
+    <string name="team">Team</string>
+</resources>

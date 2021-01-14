@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bottom_bar_divider_color">#13FFFaFF</color>
+    <color name="bottom_navigation_color">#eeaa45</color>
+    <color name="card_text">#FCFCFC</color>
+    <color name="bottom_navigation_ripple">#13FFFFFF</color>
+</resources> 
+
