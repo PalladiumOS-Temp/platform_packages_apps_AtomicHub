@@ -15,6 +15,10 @@ import com.android.settings.Utils;
 import android.os.ServiceManager;
 import android.app.ActionBar;
 import com.palladium.atomichub.*;
+import androidx.fragment.app.FragmentManager;
+import com.android.settings.display.OverlayCategoryPreferenceController;
+import com.android.settingslib.core.AbstractPreferenceController;
+import com.android.settingslib.core.lifecycle.Lifecycle;
 
 public class frag_theme extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
@@ -32,6 +36,21 @@ public class frag_theme extends SettingsPreferenceFragment implements OnPreferen
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.PALLADIUM;
+    }
+
+    @Override
+    protected List<AbstractPreferenceController> createPreferenceControllers(Context context) {
+        return buildPreferenceControllers(context, getSettingsLifecycle(), this);
+    }
+
+    private static List<AbstractPreferenceController> buildPreferenceControllers(
+            Context context, Lifecycle lifecycle, Fragment fragment) {
+        final List<AbstractPreferenceController> controllers = new ArrayList<>();
+        controllers.add(new OverlayCategoryPreferenceController(context,
+                "android.theme.customization.font"));
+        controllers.add(new OverlayCategoryPreferenceController(context,
+                "android.theme.customization.adaptive_icon_shape"));
+        return controllers;
     }
 
     @Override

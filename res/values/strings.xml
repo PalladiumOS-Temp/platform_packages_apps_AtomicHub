@@ -22,6 +22,8 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
 
+    <string name="theme_ui">Themes</string>
+    
     <!-- Card Names -->
     <string name="UI_Title">User Interface</string>
     <string name="UI_Summary">Redefine your experience by changing fonts, icons, volume panel</string>

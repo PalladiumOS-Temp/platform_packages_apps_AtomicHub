@@ -6,4 +6,19 @@
     <Preference
             android:key="theme_animation"
             android:layout="@layout/theme_animation" />
+
+    <PreferenceCategory
+        android:key="theme_customization_category"
+        android:title="@string/theme_ui">
+
+        <ListPreference
+            android:key="android.theme.customization.font"
+            android:title="@string/theme_customization_font_title"/>
+
+        <ListPreference
+            android:key="android.theme.customization.adaptive_icon_shape"
+            android:title="@string/theme_customization_icon_shape_title"/>
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
