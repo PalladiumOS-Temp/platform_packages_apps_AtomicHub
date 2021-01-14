@@ -5,4 +5,9 @@
     <Preference
             android:key="misc_animation"
             android:layout="@layout/misc_animation" />
+        <com.palladium.atomichub.preference.GlobalSettingSwitchPreference
+                android:key="allow_signature_fake"
+                android:title="@string/allow_signature_fake"
+                android:summary="@string/allow_signature_fake_summary"
+                android:defaultValue="false" />
 </PreferenceScreen>
