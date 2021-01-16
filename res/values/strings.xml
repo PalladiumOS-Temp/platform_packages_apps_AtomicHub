@@ -139,6 +139,7 @@
     <string name="accent_summary">System wide accent maker</string>
     <string name="default_string">Default</string>
     <string name="accent_color_title">RGB accent color picker</string>
+    <string name="theme_customization_systemui_title">Primary Theme</string>
 
     <!-- FOD animations -->
     <string name="fod_recog_animation">FOD recognizing animation</string>
