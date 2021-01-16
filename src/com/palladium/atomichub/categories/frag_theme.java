@@ -18,10 +18,12 @@ import android.content.om.OverlayInfo;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.Utils;
 import android.os.ServiceManager;
 import android.app.ActionBar;
 import android.os.SystemProperties;
+import android.os.RemoteException;
 import android.os.UserHandle;
 import static android.os.UserHandle.USER_CURRENT;
 import android.provider.Settings;
@@ -35,14 +37,18 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
 
-public class frag_theme extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
+public class frag_theme extends DashboardFragment implements OnPreferenceChangeListener{
+    public static final String TAG = "Themes";
     private static final String ACCENT_COLOR = "accent_color";
     private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
     private static final String CUSTOM_CLOCK_FACE = Settings.Secure.LOCK_SCREEN_CUSTOM_CLOCK_FACE;
     private static final String DEFAULT_CLOCK = "com.android.keyguard.clock.DefaultClockController";
     private IOverlayManager mOverlayService;
+    private ContentResolver mResolver;
     private ColorPickerPreference mThemeColor;
     private ListPreference mLockClockStyles;
     private Context mContext;
@@ -50,7 +56,6 @@ public class frag_theme extends SettingsPreferenceFragment implements OnPreferen
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.ps_theme);
         mOverlayService = IOverlayManager.Stub
                 .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
         mContext = getActivity();
@@ -62,6 +67,15 @@ public class frag_theme extends SettingsPreferenceFragment implements OnPreferen
         mLockClockStyles.setSummary(mLockClockStyles.getEntry());
         mLockClockStyles.setOnPreferenceChangeListener(this);
 
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
+    }
+
+    protected int getPreferenceScreenResId() {
+        return R.xml.ps_theme;
     }
 
     @Override
@@ -103,7 +117,7 @@ public class frag_theme extends SettingsPreferenceFragment implements OnPreferen
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final String key = preference.getKey();
         if (preference == mThemeColor) {
-            int color = (Integer) objValue;
+            int color = (Integer) newValue;
             String hexColor = String.format("%08X", (0xFFFFFFFF & color));
             SystemProperties.set(ACCENT_COLOR_PROP, hexColor);
             try {
