@@ -139,7 +139,8 @@
     <string name="accent_summary">System wide accent maker</string>
     <string name="default_string">Default</string>
     <string name="accent_color_title">RGB accent color picker</string>
-    
+    <string name="theme_customization_systemui_title">Primary Theme</string>
+
     <!-- Lockscreen Clocks -->
     <string name="lock_screen_custom_clock_face_category">Lockscreen Clock</string>
     <string name="lock_screen_custom_clock_face_title">Lockscreen clock style</string>

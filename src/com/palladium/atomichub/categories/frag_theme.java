@@ -40,6 +40,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.palladium.atomichub.etc.CustomOverlayPreferenceController;
 
 public class frag_theme extends DashboardFragment implements OnPreferenceChangeListener{
     public static final String TAG = "Themes";
@@ -86,6 +87,8 @@ public class frag_theme extends DashboardFragment implements OnPreferenceChangeL
     private static List<AbstractPreferenceController> buildPreferenceControllers(
             Context context, Lifecycle lifecycle, Fragment fragment) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
+        controllers.add(new CustomOverlayPreferenceController(context,
+                "android.theme.customization.custom_overlays"));
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.font"));
         controllers.add(new OverlayCategoryPreferenceController(context,
