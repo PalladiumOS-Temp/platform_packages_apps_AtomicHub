@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/team" >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/team">
     <Preference
             android:key="team_animation"
             android:layout="@layout/team_animation" />
+
+
+    <PreferenceCategory
+        android:key="team_category"
+        android:title="Core Members">
+        
+        <Preference
+            android:key="team_member"
+            android:layout="@layout/team_base" />
+        <Preference
+            android:key="team_member1"
+            android:layout="@layout/team_base1" />
+        <Preference
+            android:key="team_member2"
+            android:layout="@layout/team_base2" />
+        <Preference
+            android:key="team_member3"
+            android:layout="@layout/team_base3" />
+        
+    </PreferenceCategory>
+
 
 </PreferenceScreen>

@@ -35,7 +35,13 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
 
-    <string name="theme_ui">Themes</string>
+    <string name="theme_ui">Theming</string>
+    <string name="lsui">Lock Screen </string>
+    <string name="iconstatusbar">Icons</string>
+    <string name="clockstatusbar">Clock</string>
+    <string name="gesturestatusbar">Gestures</string>
+    <string name="qstatusbar">Quick Settings</string>
+    <string name="volumerocker">Volume Button</string>
     
     <!-- Card Names -->
     <string name="UI_Title">User Interface</string>
