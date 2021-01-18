@@ -8,6 +8,10 @@
             android:key="statusbar_animation"
             android:layout="@layout/statusbar_animation" />
 
+    <PreferenceCategory
+        android:key="status_icons"
+        android:title="@string/iconstatusbar">
+
     <com.palladium.atomichub.preference.SystemSettingSwitchPreference
         android:key="show_fourg"
         android:title="@string/show_fourg_title"
@@ -38,17 +42,70 @@
         android:summary="@string/use_old_mobiletype_summary"
         android:defaultValue="true" />
 
-    <com.palladium.atomichub.preference.SecureSettingSwitchPreference
-        android:key="quick_settings_vibrate"
-        android:title="@string/quick_settings_vibrate_title"
-        android:summary="@string/quick_settings_vibrate_summary"
-        android:defaultValue="false"/>
-        
+
     <PreferenceScreen
         android:key="icon_tuner"
         android:summary="@string/tuner_summary"
         android:title="@string/tuner_title">
         <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
+
     </PreferenceScreen>
+
+     </PreferenceCategory>
+
+    
+    <PreferenceCategory
+        android:key="status_clock"
+        android:title="@string/clockstatusbar">
+
+
+    <Preference
+	    android:key="clock_settings"
+        android:title="@string/clocksettings_title"
+        android:summary="@string/clocksettings_summary"
+        android:fragment="com.palladium.atomichub.fragments.ClockSettings"
+     />
+
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:key="status_gesture"
+        android:title="@string/gesturestatusbar">
+
+
+    <com.palladium.atomichub.preference.SystemSettingSwitchPreference
+         android:key="double_tap_sleep_gesture"
+         android:title="@string/double_tap_sleep_gesture_title"
+         android:summary="@string/double_tap_sleep_gesture_summary"
+         android:defaultValue="false" />    
+
+
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:key="theme_customization_category"
+        android:title="@string/qstatusbar">
+
+
+    <com.palladium.atomichub.preference.SecureSettingSwitchPreference
+        android:key="quick_settings_vibrate"
+        android:title="@string/quick_settings_vibrate_title"
+        android:summary="@string/quick_settings_vibrate_summary"
+        android:defaultValue="false"/>
+
+
+
+    </PreferenceCategory>
+    
+
+    
+
+   
+    
+    
 
 </PreferenceScreen>

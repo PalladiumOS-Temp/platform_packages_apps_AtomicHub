@@ -4,5 +4,6 @@
     <color name="bottom_navigation_color">#eeaa45</color>
     <color name="card_text">#FCFCFC</color>
     <color name="bottom_navigation_ripple">#13FFFFFF</color>
+    <color name="teambackground">#6c6c6c</color>
 </resources> 
 
