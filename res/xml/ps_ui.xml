@@ -12,23 +12,25 @@
         android:key="ui_lockscreen"
         android:title="@string/lsui">
 
-   <com.palladium.atomichub.preference.SystemSettingSwitchPreference
-        android:key="double_tap_sleep_lockscreen"
-        android:title="@string/double_tap_sleep_lockscreen_title"
-        android:summary="@string/double_tap_sleep_lockscreen_summary"
-        android:defaultValue="false" />
+        <com.palladium.atomichub.preference.SystemSettingSwitchPreference
+            android:key="double_tap_sleep_lockscreen"
+            android:title="@string/double_tap_sleep_lockscreen_title"
+            android:summary="@string/double_tap_sleep_lockscreen_summary"
+            android:defaultValue="false" />
 
 
-    <com.palladium.atomichub.preference.SystemSettingSwitchPreference
-        android:key="lockscreen_battery_info"
-        android:title="@string/lockscreen_battery_info_title"
-        android:summary="@string/lockscreen_battery_info_summary"
-        android:defaultValue="true" />
+        <com.palladium.atomichub.preference.SystemSettingSwitchPreference
+            android:key="lockscreen_battery_info"
+            android:title="@string/lockscreen_battery_info_title"
+            android:summary="@string/lockscreen_battery_info_summary"
+            android:defaultValue="true" />
 
 
-
-
-
+        <com.palladium.atomichub.preference.SystemSettingSwitchPreference
+            android:key="pocket_judge"
+            android:title="@string/pocket_judge_title"
+            android:summary="@string/pocket_judge_summary"
+            android:defaultValue="false" />
 
      </PreferenceCategory>
 
