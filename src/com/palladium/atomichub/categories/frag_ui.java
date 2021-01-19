@@ -13,12 +13,17 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.Utils;
 import android.os.ServiceManager;
+import android.content.res.Resources;
 import android.app.ActionBar;
+import androidx.preference.*;
 import com.palladium.atomichub.*;
 
 public class frag_ui extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
+    private static final String POCKET_JUDGE = "pocket_judge";
+
     private IOverlayManager mOverlayService;
+    private Preference mPocketJudge;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,7 +31,15 @@ public class frag_ui extends SettingsPreferenceFragment implements OnPreferenceC
         addPreferencesFromResource(R.xml.ps_ui);
         mOverlayService = IOverlayManager.Stub
                 .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
+        
+        PreferenceScreen prefScreen = getPreferenceScreen();
         //Feature Additon!
+        final Resources res = getResources();
+        mPocketJudge = (Preference) prefScreen.findPreference(POCKET_JUDGE);
+        boolean mPocketJudgeSupported = res.getBoolean(
+                com.android.internal.R.bool.config_pocketModeSupported);
+        if (!mPocketJudgeSupported)
+            prefScreen.removePreference(mPocketJudge);
 
     }
     @Override
