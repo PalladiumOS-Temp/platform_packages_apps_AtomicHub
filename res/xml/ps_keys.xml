@@ -48,6 +48,12 @@
             settings:min="0"
             settings:units=""
             android:persistent="false" />
+            
+        <SwitchPreference
+            android:key="button_brightness_sw"
+            android:title="@string/button_brightness_sw_title"
+            android:persistent="false" />
+
 
         <ListPreference
             android:dialogTitle="@string/backlight_timeout_title"
