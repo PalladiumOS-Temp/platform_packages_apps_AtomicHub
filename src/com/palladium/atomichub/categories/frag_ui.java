@@ -9,6 +9,7 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.*;
 import android.content.om.IOverlayManager;
 import android.content.om.OverlayInfo;
+import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
@@ -17,6 +18,8 @@ import android.content.res.Resources;
 import android.app.ActionBar;
 import androidx.preference.*;
 import com.palladium.atomichub.*;
+import java.util.Objects;
+import java.util.List;
 import android.content.pm.PackageManager;
 import static android.os.UserHandle.USER_SYSTEM;
 import android.app.UiModeManager;
@@ -29,13 +32,13 @@ public class frag_ui extends SettingsPreferenceFragment implements OnPreferenceC
     private static final String POCKET_JUDGE = "pocket_judge";
     private static final String PREF_ROUNDED_CORNER = "rounded_ui";
     private static final String PREF_SB_HEIGHT = "statusbar_height";
-
+    private static final String SWITCH_STYLE = "switch_style";
     private ListPreference mRoundedUi;
     private ListPreference mSbHeight;
     private IOverlayManager mOverlayService;
     private Preference mPocketJudge;
     private IOverlayManager mOverlayManager;
-
+    private ListPreference mSwitchStyle;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +74,16 @@ public class frag_ui extends SettingsPreferenceFragment implements OnPreferenceC
         }
         mSbHeight.setSummary(mSbHeight.getEntry());
         mSbHeight.setOnPreferenceChangeListener(this);
+
+        mSwitchStyle = (ListPreference) findPreference(SWITCH_STYLE);
+        int switchStyle = Settings.System.getInt(getContext().getContentResolver(),
+                Settings.System.SWITCH_STYLE, 1);
+        int valueIndex = mSwitchStyle.findIndexOfValue(String.valueOf(switchStyle));
+        mSwitchStyle.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
+        mSwitchStyle.setSummary(mSwitchStyle.getEntry());
+        mSwitchStyle.setOnPreferenceChangeListener(this);
+
+
     }
 
     public void handleOverlays(String packagename, Boolean state, IOverlayManager mOverlayManager) {
@@ -130,7 +143,12 @@ public class frag_ui extends SettingsPreferenceFragment implements OnPreferenceC
             mSbHeight.setSummary(mSbHeight.getEntry());
             return true;
         }
-    
+        else if (preference == mSwitchStyle) {
+                String value = (String) newValue;
+                Settings.System.putInt(getContext().getContentResolver(), Settings.System.SWITCH_STYLE, Integer.valueOf(value));
+                int valueIndex = mSwitchStyle.findIndexOfValue(value);
+                mSwitchStyle.setSummary(mSwitchStyle.getEntries()[valueIndex]);
+	}
         return false;
     }
     private int getOverlayPosition(String[] overlays) {
