@@ -90,7 +90,20 @@
             android:summary="@string/traffic_summary" />
 
     </PreferenceCategory>
-    
+
+    <PreferenceCategory
+        android:key="sb_battery"
+        android:title="@string/sbbattery">
+
+
+        <Preference android:key="battery_mode" 
+            android:title="@string/battery_mode_title" 
+            android:summary="@string/battery_mode_summary"
+            android:fragment="com.palladium.atomichub.fragments.BatteryMode" />
+
+
+    </PreferenceCategory>    
+
     <PreferenceCategory
         android:key="status_clock"
         android:title="@string/clockstatusbar">
