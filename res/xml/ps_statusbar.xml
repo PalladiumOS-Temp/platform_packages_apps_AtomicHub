@@ -140,6 +140,12 @@
         android:key="theme_customization_category"
         android:title="@string/qstatusbar">
 
+        <com.palladium.atomichub.preference.SystemSettingSwitchPreference
+            android:key="qs_panel_bg_use_new_tint"
+            android:title="@string/qs_bg_use_new_tint"
+            android:summary="@string/qs_bg_use_new_tint_summary"
+            android:defaultValue="false" />
+
         <com.palladium.atomichub.preference.SystemSettingListPreference
             android:key="qs_datausage" 
             android:title="@string/qs_datausage_title"
