@@ -499,6 +499,7 @@
     <string name="ambient_display">Ambient Display</string>
     <string name="ambient_display_summary">Configure Ambient Display options</string>
     <string name="ambient_gestures">Ambient Gestures</string>
+    <string name="aod_disabled">AOD is disabled</string>
 
     <!-- Media art -->
     <string name="lockscreen_media_art_title">Media art</string>
