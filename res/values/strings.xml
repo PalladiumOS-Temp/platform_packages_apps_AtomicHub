@@ -195,5 +195,7 @@
 
     <string name="navigation_bar_arrow_keys_title">IME arrows</string>
     <string name="navigation_bar_arrow_keys_summary">Show arrow keys on navbar while typing</string>
+    <string name="navigation_bar_inverse_title">Inverse layout</string>
+
 
 </resources>
