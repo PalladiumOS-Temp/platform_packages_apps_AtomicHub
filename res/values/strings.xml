@@ -193,4 +193,7 @@
     <string name="pocket_judge_title">Pocket detection</string>
     <string name="pocket_judge_summary">Block screen inputs when device is in pocket</string>
 
+    <string name="navigation_bar_arrow_keys_title">IME arrows</string>
+    <string name="navigation_bar_arrow_keys_summary">Show arrow keys on navbar while typing</string>
+
 </resources>
