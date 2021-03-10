@@ -1,22 +1,22 @@
 package com.palladium.atomichub.baselayout;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.text.InputType;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 import com.android.settings.R;
 import com.palladium.atomichub.*;
-
 
 public class Teamlayout1 extends LinearLayout {
 
@@ -34,6 +34,7 @@ public class Teamlayout1 extends LinearLayout {
     public Teamlayout1(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         abrir(context, attrs, defStyleAttr,0);
+        Log.d("Geo","Super");
     }
 
     public Teamlayout1(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
@@ -47,6 +48,7 @@ public class Teamlayout1 extends LinearLayout {
         setElevation(50);
         LinearLayout lj = new LinearLayout(c);
         addView(lj);
+        lj.setGravity(Gravity.CENTER);
         lj.setElevation(50);
         LayoutParams plj = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -55,8 +57,11 @@ public class Teamlayout1 extends LinearLayout {
         plj.setMargins(0,50,0,0);
         plj.setMarginStart(50);
         plj.setMarginEnd(50);
-        Drawable k = getResources().getDrawable(R.drawable.team_base);
-        lj.setBackground(k);
+
+        TextView k = new TextView(c);
+        k.setAutoSizeTextTypeWithDefaults(TextView.AUTO_SIZE_TEXT_TYPE_UNIFORM);
+        Drawable kp = getResources().getDrawable(R.drawable.team_base);
+        lj.setBackground(kp);
         lj.setLayoutParams(plj);
         //Start of Action...
         LinearLayout lj1 = new LinearLayout(c);
@@ -68,6 +73,7 @@ public class Teamlayout1 extends LinearLayout {
         pot.setImageDrawable(potd);
         LayoutParams ppot = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.MATCH_PARENT);
+            ppot.gravity = Gravity.CENTER_VERTICAL;
         ppot.weight = 1;
         pot.setPadding(50,50,50,50);
         lj1.addView(pot);
@@ -84,6 +90,7 @@ public class Teamlayout1 extends LinearLayout {
         lj1.addView(km);
         LayoutParams im = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.MATCH_PARENT);
+im.setMargins(0,0,0,2);
         im.weight = 1;
         km.setLayoutParams(im);
         ImageButton ghj = new ImageButton(c);
@@ -122,6 +129,8 @@ public class Teamlayout1 extends LinearLayout {
         });
 
         // End of Action
+
+
 
     }
 

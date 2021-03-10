@@ -1,4 +1,5 @@
 package com.palladium.atomichub.baselayout;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -12,11 +13,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.text.InputType;
 import androidx.annotation.Nullable;
 import com.android.settings.R;
 import com.palladium.atomichub.*;
-
 
 public class Teamlayout3 extends LinearLayout {
 
@@ -122,6 +121,7 @@ public class Teamlayout3 extends LinearLayout {
         });
 
         // End of Action
+
 
 
     }
