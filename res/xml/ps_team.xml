@@ -24,6 +24,14 @@
         <Preference
             android:key="team_member3"
             android:layout="@layout/team_base3" />
+
+        <Preference
+            android:key="team_member4"
+            android:layout="@layout/team_base4" />
+
+        <Preference
+            android:key="team_member5"
+            android:layout="@layout/team_base5" />
         
     </PreferenceCategory>
 

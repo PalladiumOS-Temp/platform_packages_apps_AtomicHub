@@ -1,4 +1,5 @@
 package com.palladium.atomichub.baselayout;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,7 +10,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.text.InputType;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -17,26 +17,25 @@ import androidx.annotation.Nullable;
 import com.android.settings.R;
 import com.palladium.atomichub.*;
 
-
 public class Teamlayout2 extends LinearLayout {
 
 
-    public Teamlayout2 (Context context) {
+    public Teamlayout2(Context context) {
         super(context);
         abrir(context, null,0,0);
     }
 
-    public Teamlayout2 (Context context, @Nullable AttributeSet attrs) {
+    public Teamlayout2(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         abrir(context, attrs, 0,0);
     }
 
-    public Teamlayout2 (Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public Teamlayout2(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         abrir(context, attrs, defStyleAttr,0);
     }
 
-    public Teamlayout2 (Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public Teamlayout2(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         abrir(context, attrs, defStyleAttr, defStyleRes);
     }
@@ -102,7 +101,6 @@ public class Teamlayout2 extends LinearLayout {
         tmj.setBackgroundColor(Color.TRANSPARENT);
         tmj.setImageDrawable(tmjl);
         tmj.setLayoutParams(imv);
-
         ghj.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,6 +120,8 @@ public class Teamlayout2 extends LinearLayout {
         });
 
         // End of Action
+
+
 
     }
 
