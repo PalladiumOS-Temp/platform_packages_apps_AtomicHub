@@ -24,6 +24,12 @@
             android:summary="@string/volume_rocker_music_controls_summary"
             android:title="@string/volume_rocker_music_controls_title"
             android:defaultValue="false" />     
+
+        <com.palladium.atomichub.preference.SystemSettingSwitchPreference
+            android:key="volume_panel_on_left"
+            android:title="@string/volume_panel_on_left_title"
+            android:defaultValue="false"
+            settings:controller="com.android.settings.sound.VolumePanelOnLeftPreferenceController"/>
             
         </PreferenceCategory>
 

@@ -427,4 +427,8 @@
     <string name="volume_panel_oreo_val" translatable="false">co.potatoproject.plugin.volume.oreo</string>
     <string name="volume_panel_tiled_val" translatable="false">co.potatoproject.plugin.volume.tiled</string>
     <string name="volume_panel_miui_val" translatable="false">com.palladium.plugin.volume.miui</string>
+
+    <!-- Volume panel on left switch -->
+    <string name="volume_panel_on_left_title">Show volume panel on left</string>
+
 </resources>
