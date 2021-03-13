@@ -155,6 +155,8 @@
     <string name="lock_screen_custom_clock_face_samsung_bold">Samsung (bold)</string>
     <string name="lock_screen_custom_clock_face_samsung_highlight">Samsung (colored)</string>
     <string name="lock_screen_custom_clock_face_typographic">Typographic</string>
+    <string name="lock_screen_custom_clock_face_404_IDE_Clock">404 IDE Clock</string>
+    
 
     <!-- gvisual mod -->
     <string name="gvisual_title">Gvisual Mod</string>

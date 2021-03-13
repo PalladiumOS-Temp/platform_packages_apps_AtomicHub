@@ -115,6 +115,7 @@
         <item>@string/lock_screen_custom_clock_face_samsung_bold</item>
         <item>@string/lock_screen_custom_clock_face_samsung_highlight</item>
         <item>@string/lock_screen_custom_clock_face_typographic</item>
+        <item>@string/lock_screen_custom_clock_face_404_IDE_Clock</item>
     </string-array>
     
     <string-array name="lock_screen_custom_clock_face_values" translatable="false">
@@ -126,7 +127,7 @@
         <item>com.android.keyguard.clock.SamsungBoldClockController</item>
         <item>com.android.keyguard.clock.SamsungHighlightClockController</item>
         <item>com.android.keyguard.clock.TypeClockController</item>
-
+        <item>com.android.keyguard.clock.IDEClockController</item>
     </string-array>
 
     <!-- VoLTE Icon Type -->
