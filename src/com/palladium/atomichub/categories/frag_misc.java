@@ -18,11 +18,19 @@ import com.palladium.atomichub.*;
 import android.app.ActionBar;
 import com.android.internal.util.custom.FodUtils;
 
+import com.palladium.atomichub.preference.SecureSettingListPreference;
+import android.os.SystemProperties;
 public class frag_misc extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private IOverlayManager mOverlayService;
     private boolean mHasFod;
     private Context mContext;
+    private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
+    private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
+    private static final String SCROLLINGCACHE_DEFAULT = "2";
+
+    private ListPreference mScrollingCachePref;
+
 
     private static final String KEY_FOD_RECOGNIZING_ANIM = "fod_recognizing_animation";
 
@@ -40,6 +48,10 @@ public class frag_misc extends SettingsPreferenceFragment implements OnPreferenc
         if (!mHasFod) {
             prefScreen.removePreference(findPreference(KEY_FOD_RECOGNIZING_ANIM));
         }
+	    mScrollingCachePref = (ListPreference) findPreference(SCROLLINGCACHE_PREF);
+        mScrollingCachePref.setValue(SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP,
+        SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
+        mScrollingCachePref.setOnPreferenceChangeListener(this);
 
     }
     @Override
@@ -61,6 +73,12 @@ public class frag_misc extends SettingsPreferenceFragment implements OnPreferenc
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final String key = preference.getKey();
+        if (preference == mScrollingCachePref) {
+            if (newValue != null) {
+                SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, (String) newValue);
+            }
+            return true;
+	}
         return true;
     }
 }
