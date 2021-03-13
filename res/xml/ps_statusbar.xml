@@ -80,6 +80,15 @@
 
 
     <PreferenceCategory
+        android:key="sb_network"
+        android:title="@string/sbnetwork">
+            <Preference
+                android:key="traffic" 
+                android:fragment="com.palladium.atomichub.fragments.Traffic"
+	            android:title="@string/traffic_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="sb_battery"
         android:title="@string/sbbattery">
 
