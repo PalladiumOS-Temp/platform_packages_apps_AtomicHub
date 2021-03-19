@@ -67,6 +67,14 @@ public class FodGeneral extends SettingsPreferenceFragment implements
             prefScreen.removePreference(ScreenOffFODPref);
         }              
 
+        Preference AnimaTogglePref = (Preference) findPreference("fod_recognizing_animation");
+        Preference AnimaListPref = (Preference) findPreference("fod_recognizing_animation_list");            
+
+        if (!com.android.internal.util.palladium.PalladiumUtils.isPackageInstalled(mContext,"com.palladium.fod.animations")) {
+            prefScreen.removePreference(AnimaTogglePref);
+            prefScreen.removePreference(AnimaListPref);                
+        } 
+
     }      
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
