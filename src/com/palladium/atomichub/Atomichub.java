@@ -1,7 +1,7 @@
 package com.palladium.atomichub;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-
+import android.widget.Toast;
 import com.android.internal.logging.nano.MetricsProto;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +22,10 @@ import com.palladium.atomichub.categories.frag_misc;
 import com.palladium.atomichub.categories.frag_team;
 import com.palladium.atomichub.categories.frag_statusbar;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
+
 public class Atomichub extends SettingsPreferenceFragment implements  View.OnClickListener{
 
     final String[] target = new String[1];
@@ -31,6 +35,7 @@ public class Atomichub extends SettingsPreferenceFragment implements  View.OnCli
     TextView title,summary;
     HorizontalScrollView horizontalScrollView;
     ImageButton btntransistion;
+    ImageView pdlogo;
 
 
 
@@ -45,7 +50,9 @@ public class Atomichub extends SettingsPreferenceFragment implements  View.OnCli
     public void onViewCreated(View view, Bundle savedInstanceState) {
         
         super.onViewCreated(view, savedInstanceState);
-		getActivity().getActionBar().hide();        
+		getActivity().getActionBar().hide();
+		pdlogo = view.findViewById(R.id.pdlogo);
+		pdlogo.setOnClickListener(this);
         horizontalScrollView = view.findViewById(R.id.hsv_card);
         btntransistion = view.findViewById(R.id.btn_trans);
         btntransistion.setOnClickListener(this);
@@ -75,6 +82,32 @@ public class Atomichub extends SettingsPreferenceFragment implements  View.OnCli
     public void onClick(View view) {
 
         int id = view.getId();
+
+        if(id == R.id.pdlogo){
+            SimpleDateFormat sdf =new  SimpleDateFormat("yyyy-MM-dd");
+            LocalDate date,actdate;
+            date = java.time.LocalDate.now();
+            actdate = LocalDate.parse("2021-01-05");
+            Date a,b;
+            Long diff, days;
+            try{
+                a = sdf.parse(date.toString());
+                b = sdf.parse(actdate.toString());
+                diff = a.getTime() - b.getTime();
+                days = ((diff/ (1000*3600*24))%365);
+                String m1,m2,m3;
+                m1 = "Hello there pdian! This is your first Easter Egg #01";
+                m2 = "We started working on AtomicHub "+ days + " days ago...Awesome right!!!";
+                m3 = "Good day! See ya soon...";
+                android.widget.Toast.makeText(getActivity(),m1, Toast.LENGTH_SHORT).show();
+                android.widget.Toast.makeText(getActivity(),m2, Toast.LENGTH_LONG).show();
+                android.widget.Toast.makeText(getActivity(),m3, Toast.LENGTH_SHORT).show();
+            }catch(Exception e) {
+                e.printStackTrace();
+            }
+
+
+        }
 
         if(id == R.id.card1){
             // UI
