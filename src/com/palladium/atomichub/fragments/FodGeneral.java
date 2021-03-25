@@ -59,14 +59,6 @@ public class FodGeneral extends SettingsPreferenceFragment implements
         Context mContext = getContext();
         final PackageManager mPm = getActivity().getPackageManager();                    
             
-        boolean enableScreenOffFOD = getContext().getResources().
-                getBoolean(R.bool.config_supportScreenOffFod);
-        Preference ScreenOffFODPref = (Preference) findPreference("fod_gesture");
-
-        if (!enableScreenOffFOD){
-            prefScreen.removePreference(ScreenOffFODPref);
-        }              
-
         Preference AnimaTogglePref = (Preference) findPreference("fod_recognizing_animation");
         Preference AnimaListPref = (Preference) findPreference("fod_recognizing_animation_list");            
 
