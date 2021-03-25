@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2021 The Palladium-OS
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+         http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<vector android:height="29.67dp" android:viewportHeight="506"
+    android:viewportWidth="500" android:width="30dp"
+    xmlns:aapt="http://schemas.android.com/aapt" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#00000000"
+        android:pathData="M20,252.802C20,124.019 123.184,20.002 250,20.002C376.816,20.002 480,124.019 480,252.802C480,381.584 376.816,485.602 250,485.602C123.184,485.602 20,381.584 20,252.802Z"
+        android:strokeColor="#000000" android:strokeWidth="40"/>
+    <path android:fillColor="#00000000"
+        android:pathData="M20,252.802C20,124.019 123.184,20.002 250,20.002C376.816,20.002 480,124.019 480,252.802C480,381.584 376.816,485.602 250,485.602C123.184,485.602 20,381.584 20,252.802Z" android:strokeWidth="40">
+        <aapt:attr name="android:strokeColor">
+            <gradient android:endX="250" android:endY="0.00155945"
+                android:startX="250" android:startY="505.602" android:type="linear">
+                <item android:color="#FF1B9688" android:offset="0"/>
+
+                <item android:color="#FF25DCC8" android:offset="1"/>
+                <item android:color="#FF21BFAD" android:offset="1"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path android:fillAlpha="0.9" android:fillColor="#DCAC31"
+        android:fillType="evenOdd"
+        android:pathData="M381.146,350.902C394.117,327.621 400.603,301.145 400.603,271.478C400.603,260.724 399.77,250.437 398.104,240.617L359.698,240.617C361.745,250.159 362.765,260.446 362.765,271.478C362.765,293.26 357.903,312.599 348.173,329.498C338.443,346.395 325.108,359.54 308.173,368.929C291.237,378.318 271.957,383.008 250.335,383.008C228.355,383.008 208.894,378.694 191.958,370.056C175.022,361.042 161.688,348.648 151.959,332.878C142.229,316.729 137.365,298.141 137.365,277.112C137.365,264.07 139.217,251.906 142.921,240.617H103.544C100.865,252.2 99.527,264.364 99.527,277.112C99.527,306.026 106.194,331.563 119.527,353.719C132.5,375.877 150.337,393.336 173.04,406.106C195.741,418.875 221.507,425.26 250.335,425.26C278.804,425.26 304.39,418.687 327.09,405.542C349.794,392.022 367.811,373.811 381.146,350.902Z" android:strokeAlpha="0.9"/>
+    <path android:fillAlpha="0.9" android:fillType="evenOdd"
+        android:pathData="M381.146,350.902C394.117,327.621 400.603,301.145 400.603,271.478C400.603,260.724 399.77,250.437 398.104,240.617L359.698,240.617C361.745,250.159 362.765,260.446 362.765,271.478C362.765,293.26 357.903,312.599 348.173,329.498C338.443,346.395 325.108,359.54 308.173,368.929C291.237,378.318 271.957,383.008 250.335,383.008C228.355,383.008 208.894,378.694 191.958,370.056C175.022,361.042 161.688,348.648 151.959,332.878C142.229,316.729 137.365,298.141 137.365,277.112C137.365,264.07 139.217,251.906 142.921,240.617H103.544C100.865,252.2 99.527,264.364 99.527,277.112C99.527,306.026 106.194,331.563 119.527,353.719C132.5,375.877 150.337,393.336 173.04,406.106C195.741,418.875 221.507,425.26 250.335,425.26C278.804,425.26 304.39,418.687 327.09,405.542C349.794,392.022 367.811,373.811 381.146,350.902Z" android:strokeAlpha="0.9">
+        <aapt:attr name="android:fillColor">
+            <gradient android:endX="250.065" android:endY="425.26"
+                android:startX="250.065" android:startY="240.617" android:type="linear">
+                <item android:color="#FFDCAC31" android:offset="0"/>
+                <item android:color="#00FFFFFF" android:offset="1"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>
