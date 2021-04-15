@@ -25,6 +25,11 @@
             android:summary="@string/lockscreen_battery_info_summary"
             android:defaultValue="true" />
 
+        <com.palladium.atomichub.preference.SystemSettingSwitchPreference
+        android:key="lockscreen_translucent_notifications_bg_enabled"
+        android:title="@string/translucent_lockscreen_notifications_bg_title"
+        android:defaultValue="false" />
+
 
         <com.palladium.atomichub.preference.SystemSettingSwitchPreference
             android:key="pocket_judge"
