@@ -37,6 +37,12 @@
                 android:summary="@string/wakeup_when_plugged_unplugged_summary"
                 android:defaultValue="true" />
 
+        <SwitchPreference
+        android:key="fingerprint_success_vib"
+        android:title="@string/fprint_sucess_vib_title"
+        android:summary="@string/fprint_sucess_vib_summary"
+        android:persistent="false" />
+
     <PreferenceCategory
         android:key="misc_notification"
         android:title="@string/misc_notification">
