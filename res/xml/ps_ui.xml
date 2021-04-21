@@ -18,15 +18,11 @@
             android:summary="@string/double_tap_sleep_lockscreen_summary"
             android:defaultValue="false" />
 
-        <PreferenceScreen
-            android:key="ambient_display_custom"
-            android:persistent="false"
-            android:title="@string/ambient_display_custom_title">
-                <intent 
-                    android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.custom.ambient.display"
-                    android:targetClass="com.custom.ambient.display.DozeSettings" />
-        </PreferenceScreen>
+        <Preference
+            android:key="ambient_display"
+            android:title="@string/ambient_display"
+            android:summary="@string/ambient_display_summary"
+            android:fragment="com.palladium.atomichub.fragments.AmbientDisplay"/>
 
         <com.palladium.atomichub.preference.SystemSettingSwitchPreference
             android:key="lockscreen_battery_info"
