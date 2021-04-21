@@ -16,6 +16,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+
+    <PreferenceCategory
+        android:key="doze_schedule"
+        android:title="@string/doze_schedule">
+
+        <Preference 
+        android:key="always_on_display_schedule"
+        android:title="@string/always_on_display_schedule_title"
+        android:fragment="com.palladium.atomichub.fragments.AODSchedule" />
+
+    </PreferenceCategory>
+
     <PreferenceCategory
         android:key="ui_ambient"
         android:title="@string/ambient_display_custom_title">

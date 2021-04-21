@@ -71,6 +71,7 @@ public class AmbientDisplay extends SettingsPreferenceFragment
     private ListPreference mColorMode;
     private CustomSeekBarPreference mPulseBrightness;
     private CustomSeekBarPreference mDozeBrightness;
+    Preference mAODPref;
 
 
     private static final String NOTIFICATION_PULSE_COLOR = "ambient_notification_light_color";
@@ -80,6 +81,7 @@ public class AmbientDisplay extends SettingsPreferenceFragment
     private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
     private static final String KEY_AMBIENT = "ambient_notification_light_enabled";
+    private static final String AOD_SCHEDULE_KEY = "always_on_display_schedule";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -160,6 +162,33 @@ public class AmbientDisplay extends SettingsPreferenceFragment
         mDozeBrightness.setValue(value_bright);
         mDozeBrightness.setOnPreferenceChangeListener(this);
 
+        mAODPref = findPreference(AOD_SCHEDULE_KEY);
+        updateAlwaysOnSummary();
+
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateAlwaysOnSummary();
+    }
+
+    private void updateAlwaysOnSummary() {
+        if (mAODPref == null) return;
+        int mode = Settings.Secure.getIntForUser(getActivity().getContentResolver(),
+                Settings.Secure.DOZE_ALWAYS_ON_AUTO_MODE, 0, UserHandle.USER_CURRENT);
+        switch (mode) {
+            case 0:
+                mAODPref.setSummary(R.string.disabled);
+                break;
+            case 1:
+                mAODPref.setSummary(R.string.night_display_auto_mode_twilight);
+                break;
+            case 2:
+                mAODPref.setSummary(R.string.night_display_auto_mode_custom);
+                break;
+        }
     }
 
     @Override
