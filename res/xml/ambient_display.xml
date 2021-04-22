@@ -16,6 +16,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:key="ui_ambient"
+        android:title="@string/ambient_display_custom_title">
+
         <PreferenceScreen
             android:key="ambient_display_custom"
             android:persistent="false"
@@ -25,6 +29,8 @@
                     android:targetPackage="com.custom.ambient.display"
                     android:targetClass="com.custom.ambient.display.DozeSettings" />
         </PreferenceScreen>
+     
+    </PreferenceCategory>
 
  <PreferenceCategory
         android:key="pulse_ambient_light_category"
@@ -97,5 +103,26 @@
             android:dependency="pulse_ambient_light" />
 
     </PreferenceCategory>
+
+
+     <PreferenceCategory
+        android:title="@string/doze_brightness_category" >
+        <com.palladium.atomichub.preference.CustomSeekBarPreference
+            android:key="ambient_doze_brightness"
+            android:title="@string/ambient_doze_brightness_title"
+            android:summary="@string/ambient_doze_brightness_summary"
+            android:max="255"
+            settings:min="1"
+            android:persistent="false" />
+
+        <com.palladium.atomichub.preference.CustomSeekBarPreference
+            android:key="ambient_pulse_brightness"
+            android:title="@string/ambient_pulse_brightness_title"
+            android:summary="@string/ambient_pulse_brightness_summary"
+            android:max="255"
+            settings:min="1"
+            android:persistent="false" />
+    </PreferenceCategory>
+
 
 </PreferenceScreen>
