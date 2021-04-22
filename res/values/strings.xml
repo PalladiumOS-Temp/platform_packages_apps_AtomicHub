@@ -383,6 +383,9 @@
     <string name="qs_bg_use_new_tint">New tint style</string>
     <string name="qs_bg_use_new_tint_summary">Enable the new QS tint style (Requires reboot)</string>
 
+    <!-- Quick Settings -->
+    <string name="lockscreen_qs_disabled_title">Disable quick settings when locked</string>
+    <string name="lockscreen_qs_disabled_summary">Disable expanding quick settings on secure lock screens</string>
 
     <!-- Volume Panel Plugin -->
     <string name="volume_panel">Volume panel style</string>
