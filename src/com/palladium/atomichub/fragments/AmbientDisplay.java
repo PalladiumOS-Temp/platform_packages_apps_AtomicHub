@@ -129,17 +129,16 @@ public class AmbientDisplay extends SettingsPreferenceFragment
         mColorMode.setOnPreferenceChangeListener(this);
 
         mEdgeLightColorPreference = (ColorPickerPreference) findPreference(NOTIFICATION_PULSE_COLOR);
+        mEdgeLightColorPreference.setOnPreferenceChangeListener(this);
         int edgeLightColor = Settings.System.getInt(getContentResolver(),
                 Settings.System.NOTIFICATION_PULSE_COLOR, 0xFF3980FF);
-        mEdgeLightColorPreference.setNewPreviewColor(edgeLightColor);
-        mEdgeLightColorPreference.setAlphaSliderEnabled(false);
         String edgeLightColorHex = String.format("#%08x", (0xFF3980FF & edgeLightColor));
         if (edgeLightColorHex.equals("#ff3980ff")) {
             mEdgeLightColorPreference.setSummary(R.string.color_default);
         } else {
             mEdgeLightColorPreference.setSummary(edgeLightColorHex);
         }
-        mEdgeLightColorPreference.setOnPreferenceChangeListener(this);
+        mEdgeLightColorPreference.setNewPreviewColor(edgeLightColor);
 
         int defaultDoze = getResources().getInteger(
                 com.android.internal.R.integer.config_screenBrightnessDoze);
