@@ -73,6 +73,12 @@
             android:summary="@string/statusbar_icons_style_summary"
             android:defaultValue="true" />
 
+    <com.palladium.atomichub.preference.SystemSettingSwitchPreference
+            android:key="headers_icons_style"
+            android:title="@string/header_icons_style"
+            android:summary="@string/header_icons_style_summary"
+            android:defaultValue="true" />
+
     <PreferenceScreen
         android:key="icon_tuner"
         android:summary="@string/tuner_summary"
