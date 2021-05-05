@@ -611,5 +611,11 @@
     <string name="heads_up_snooze_10min">10 minutes</string>
     <string name="heads_up_snooze_15min">15 minutes</string>
     <string name="heads_up_snooze_20min">20 minutes</string>
+
+    <!-- AOD Icons in Lockscreen! -->
+    <string name="lock_aod_icons_title">AOD Icons</string>
+    <string name="ambient_icons_lockscreen_title">AOD icons on lockscreen</string>
+    <string name="ambient_icons_lockscreen_summary">Replace notifications with AOD icons</string>
+    <string name="ambient_icons_size_title">AOD icons size</string>
     
 </resources>

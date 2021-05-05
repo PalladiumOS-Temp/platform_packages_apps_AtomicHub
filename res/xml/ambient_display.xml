@@ -11,10 +11,9 @@
      limitations under the License.
 -->
 
-<PreferenceScreen
-    android:title="@string/ambient_display"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/ambient_display">
 
 
     <PreferenceCategory
@@ -147,6 +146,28 @@
             settings:min="1"
             android:persistent="false" />
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="lock_aod_icons"
+        android:title="@string/lock_aod_icons_title">
+
+   <com.palladium.atomichub.preference.SystemSettingSwitchPreference
+            android:key="ambient_icons_lockscreen"
+            android:title="@string/ambient_icons_lockscreen_title"
+            android:summary="@string/ambient_icons_lockscreen_summary"
+            android:defaultValue="false" />
+
+    <com.palladium.atomichub.preference.CustomSystemSeekBarPreference
+            android:key="ambient_icons_size"
+            android:title="@string/ambient_icons_size_title"
+            android:dependency="ambient_icons_lockscreen"
+            android:max="80"
+            settings:min="0"
+            settings:units="dp"
+            settings:interval="1"
+            android:defaultValue="80" />
+
+  </PreferenceCategory>
 
 
 </PreferenceScreen>
